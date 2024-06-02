@@ -89,7 +89,7 @@
                     <li><a class="dropdown-item" href="./video_manage">Videos</a></li>
                     <li><a class="dropdown-item" href="./photo_manage">Gallery</a></li>
                     <li><a class="dropdown-item" href="/viewBookings">Booking Artist</a></li>
-                    <li><a class="dropdown-item" href="/uploadBooking">Update Book Artist</a></li>
+                    <li><a class="dropdown-item" href="/uploadBookinggg">Update Book Artist</a></li>
                     <li><a class="dropdown-item" href="./view_demo_submission">Demo Submissions</a></li>
  
                 </ul>

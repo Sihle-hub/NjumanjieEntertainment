@@ -380,7 +380,7 @@ public class PageController {
 					
 				}
 			 
-			 @GetMapping("/uploadBooking")
+			 @GetMapping("/uploadBookinggg")
 			 public String uploadBooking() {
 				 
 			       return "upload_booking.html";//load the about page

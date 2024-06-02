@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+			margin-top: 4%;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333333;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="time"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensure padding and border are included in width */
+        }
+
+        /* Hover effect */
+        input[type="text"]:hover,
+        input[type="date"]:hover,
+        input[type="email"]:hover,
+        input[type="tel"]:hover,
+        input[type="time"]:hover,
+        input[type="submit"]:hover {
+            border-color: #007bff; /* Change border color on hover */
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for labels */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333333;
+        }
+		#check{
+			color: red;
+			text-align: center;
+		}
+		/* Adjust font sizes based on screen size */
+		@media screen and (max-width: 768px) {
+		    body {
+		        font-size: 16px; /* Adjust as needed for smaller screens */
+		    }
+		    .section-heading {
+		        font-size: 20px; /* Decrease font size for smaller screens */
+		    }
+		}
+		
+		/* Adjust image sizes for different screen sizes */
+		.image-container img {
+		    max-width: 100%; /* Make images responsive */
+		    height: auto;
+		}
+		
+		/* Adjust padding and margins for smaller screens */
+		@media screen and (max-width: 576px) {
+		    .container {
+		        padding: 0 10px; /* Decrease padding for smaller screens */
+		    }
+		    .btn-book {
+		        text-align: center; /* Center the button on smaller screens */
+		        margin-right: 0; /* Remove right margin */
+		    }
+		}
+    </style>
+</head>
+<body>
+    <!-- Modal container -->
+    <div id="myModal" class="modal">
+        <div class="form-container">
+            <h2>Booking Form</h2>
+			<p id="check">Check The Bookings page before proceeding</p>
+            <form action="/bookings" method="post">
+				<label for="artistName">Artist Name:</label>
+                <input type="text" id="artistName" name="artistName" required>
+				<label for="bookingDate">Date:</label>
+				<input type="date" id="bookingDate" name="bookingDate" placeholder="Select Date" required min="2024-05-30">
+				<label for="bookingFromTime">From:</label>
+				<input type="time" id="bookingFromTime" name="bookingFromTime" required>
+                <label for="bookingToTime">To:</label>	
+				<input type="time" id="bookingToTime" name="bookingToTime" required>
+				<label for="venueName">Venue:</label>
+				<input type="text" id="venueName" name="venueName"  required>
+				<label for="emailAddress">Email:</label>
+				<input type="email" id="emailAddress" name="emailAddress">
+				<label for="bookerPhoneNumber">Tel:</label>
+				<input type="tel" id="bookerPhoneNumber" name="bookerPhoneNumber" required pattern="[0-9]{10}">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript to display modal on page load -->
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Display the modal when the page is loaded
+        window.onload = function() {
+            modal.style.display = "block";
+        };
+		
+		var today = new Date().toISOString().split('T')[0];
+		document.getElementById("bookingDate").setAttribute('min', today);
+
+    </script>
+</body>
+</html>

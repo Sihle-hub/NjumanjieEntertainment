@@ -7,12 +7,13 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.security.access.prepost.PreAuthorize;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.domain.Artist;
@@ -76,7 +77,7 @@ public class PageController {
 	@GetMapping("/admin_page")
 	 public String adminPage() {
 		 
-	       return "admin.jsp";//only admin have access
+	       return "login.html";//only admin have access
 	       
 	   }
 	 
@@ -470,6 +471,27 @@ public class PageController {
 					
 				}
 			 
+			 
+			 @PostMapping("/loginAdminConsole")
+			 public String loginAdminConsole(@RequestParam("username") String username,
+					 @RequestParam("password") String password
+					 ) {
+				 
+				 String url = "" , user = "Yandile101@!" , pass = "asfrerfsre@!";
+				 
+				 if(user.equals(username) && pass.equals(password)) {
+					 
+					 url="redirect:/admin.jsp";
+					 
+				 }
+				 else {
+					 
+					    url = "redirect:/login.html";
+				 }
+				 
+
+				 return url;// Redirect to admin page
+			 }
 		 
 			 
 		

@@ -24,7 +24,7 @@
 		    background-repeat: no-repeat; /* Do not repeat the image */
 		    background-position: center; /* Center the image */
 		}
-		
+
 		.container {
     width: 90%; /* Instead of fixed width, use a percentage */
     max-width: 1200px; /* Limit the maximum width for larger screens */
@@ -270,13 +270,13 @@
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="/images/NE 1.png" class="d-block w-100" alt="...">
+					<img src="/images/NE 4.png" class="d-block w-100" alt="...">
 					<div class="carousel-caption d-none d-md-block">
 						<!-- Caption content here -->
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="/images/NE 1.png" class="d-block w-100" alt="...">
+					<img src="/images/NE 5.png" class="d-block w-100" alt="...">
 					<div class="carousel-caption d-none d-md-block">
 						<!-- Caption content here -->
 					</div>
